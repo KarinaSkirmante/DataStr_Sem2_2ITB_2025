@@ -33,7 +33,7 @@ public class MyLinkedList<Ttype> {
 	
 	public void add(Ttype element) throws NullPointerException{
 		if(element == null) {
-			throw new NullPointerException("Elementa vērtība nevar būt null");
+			throw new NullPointerException("Element can not be as null");
 		}
 		
 		if(!isFull()) {
@@ -55,4 +55,22 @@ public class MyLinkedList<Ttype> {
 			
 		}
 	}
+	
+	public void print() throws Exception{
+		if(isEmpty()) {
+			throw new Exception("List is empty and it is not possible to print elements");
+		}
+		
+		MyNode currentNode = firstNode;
+		
+		while(currentNode != null)
+		{
+			System.out.print(currentNode.getElement() + " ");
+			currentNode = currentNode.getNext();
+		}
+	}
+	
+	
+	
+	
 }
