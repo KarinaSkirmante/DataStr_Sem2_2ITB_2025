@@ -97,10 +97,55 @@ public class MyLinkedList<Ttype> {
 		{
 			throw new Exception("The position is not accepted");
 		}
-			 
-		
+
 		
 	}
+	public void remove(int position) throws Exception
+	{
+	//parbaudit, vai saraksts ir tukss un ja ir, metam iznemumu
+		if(isEmpty()) {
+			throw new Exception("List is empty and it is not possible to remove element");
+		}
+		
+	//parbaudit index. Pie nepareiza indeksa izmest iznemumu
+		if(position <= 0 || position > counter)
+		{
+			throw new Exception("The index is not accepted");
+		}
+		
+		if(position == 1) {//dzēšam pirmo elementu
+			firstNode = firstNode.getNext();
+			firstNode.setPrevious(null);
+			System.gc();
+			counter--;
+		}
+		else if(position == counter) {//dzēšam pēdējo elementu
+			lastNode = lastNode.getPrevious();	
+			lastNode.setNext(null);
+			System.gc();
+			counter--;
+		}
+		else
+		{
+			MyNode currentNode = firstNode;
+			for(int i = 0; i < position-1; i++) {
+				currentNode = currentNode.getNext();
+			}
+			
+			MyNode currentNodeNext = currentNode.getNext();
+			MyNode currentNodePrevious = currentNode.getPrevious();
+			currentNodeNext.setPrevious(currentNodePrevious);
+			currentNodePrevious.setNext(currentNodeNext);
+			currentNode = null;
+			System.gc();
+			counter--;
+			
+			
+		}
+		
+	}
+	
+	
 	
 	public void print() throws Exception{
 		if(isEmpty()) {

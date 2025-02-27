@@ -13,6 +13,7 @@ public class MainService {
 		linkedListForInt.add(1000);//45 100 -200 1000
 		
 		try {
+			System.out.println("-------------------ADD-------------------");
 			linkedListForInt.print();//45 100 -200 1000
 			linkedListForInt.add(-222, 1);//-222 45 100 -200 1000
 			linkedListForInt.print();//-222 45 100 -200 1000
@@ -20,6 +21,15 @@ public class MainService {
 			linkedListForInt.print();//-222 45 100 -200 1000 2000
 			linkedListForInt.add(55, 4);//-222 45 100 55 -200 1000 2000
 			linkedListForInt.print();//-222 45 100 55 -200 1000 2000
+			
+			System.out.println("-------------------DELETE-------------------");
+			linkedListForInt.remove(1);//-222 izdzēsisies
+			linkedListForInt.print();//45 100 55 -200 1000 2000
+			linkedListForInt.remove(6);//2000 izdzēsisies
+			linkedListForInt.print();//45 100 55 -200 1000
+			linkedListForInt.remove(3);//55 izdzēsisies
+			linkedListForInt.print();//45 100 -200 1000
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
