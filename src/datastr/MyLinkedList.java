@@ -1,6 +1,6 @@
 package datastr;
 
-public class MyLinkedList {
+public class MyLinkedList<Ttype> {
 	private MyNode firstNode = null;
 	private MyNode lastNode = null;
 	private int counter = 0;
@@ -31,4 +31,28 @@ public class MyLinkedList {
 		return counter;
 	}
 	
+	public void add(Ttype element) throws NullPointerException{
+		if(element == null) {
+			throw new NullPointerException("Elementa vērtība nevar būt null");
+		}
+		
+		if(!isFull()) {
+			//pevienos elementu
+			if(isEmpty()) {//tiks pirmais mezgls pievienots, jo ir saraksts tukšs
+				MyNode newNode = new MyNode(element);
+				lastNode = newNode;
+				firstNode = newNode;
+				counter++;
+			}
+			else
+			{
+				MyNode newNode = new MyNode(element);
+				newNode.setPrevious(lastNode);
+				lastNode.setNext(newNode);
+				lastNode = newNode;
+				counter++;
+			}
+			
+		}
+	}
 }
