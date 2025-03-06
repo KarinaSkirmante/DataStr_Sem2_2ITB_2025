@@ -3,6 +3,7 @@ package service;
 import java.util.Arrays;
 
 import datastr.MyLinkedList;
+import model.Student;
 
 public class MainService {
 
@@ -51,6 +52,38 @@ public class MainService {
 			e.printStackTrace();
 		}
 
+		
+		
+		System.out.println("-----------------------------------");
+		MyLinkedList<Student> linkedListForStudent = new MyLinkedList<Student>();
+		
+		Student st1 = new Student();
+		Student st2 = new Student("Janis", "Berzins");
+		Student st3 = new Student("Anna Paula", "Jauka-Nejauka");
+		linkedListForStudent.add(st1);
+		try
+		{
+			linkedListForStudent.add(st2, 1);
+			linkedListForStudent.add(st3, 1);
+			linkedListForStudent.print();//Anna Paula, Janis, Test
+			
+			linkedListForStudent.remove(2);//Janis izdzests
+			linkedListForStudent.print();//Anna Paula, Test
+			
+			
+			System.out.println(linkedListForStudent.get(1));//Anna Paula
+			MyLinkedList<Integer> getPositionsForSearchedElement 
+			= linkedListForStudent.searchElement(st1);
+			getPositionsForSearchedElement.print();//2
+			
+			linkedListForStudent.makeEmpty();
+			linkedListForStudent.add(new Student("Roberts", "Gudrais"));
+			linkedListForStudent.print();//Roberts
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
 	}
 
 }
