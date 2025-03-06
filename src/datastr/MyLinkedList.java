@@ -166,8 +166,49 @@ public class MyLinkedList<Ttype> {
 		return (Ttype) currentNode.getElement();	
 	}
 	
-	//TODO
-	//izveidot search funkciju
+	public int[] searchElement(Ttype element) throws Exception
+	{
+		if(isEmpty()) {
+			throw new Exception("List is empty and it is not possible to search element");
+		}
+		
+		int howManyElementsSearched = 0;
+		
+		MyNode currentNode = firstNode;
+		
+		while(currentNode != null)
+		{
+		
+			if(currentNode.getElement().equals(element))
+			{
+				howManyElementsSearched++;
+			}
+		
+			currentNode = currentNode.getNext();
+		}
+		
+		
+		
+		int[] positions = new int[howManyElementsSearched];
+		int counterForPositions= 0;
+		
+		currentNode = firstNode;
+		
+		for(int i = 1; i <= counter; i++)
+		{
+			if(currentNode.getElement().equals(element))
+			{
+				positions[counterForPositions] = i;
+				counterForPositions++;
+			}
+			
+			currentNode = currentNode.getNext();
+			
+		}
+
+		return positions;
+		
+	}
 	
 	
 	

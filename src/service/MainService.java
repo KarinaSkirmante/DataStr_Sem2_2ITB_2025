@@ -1,5 +1,7 @@
 package service;
 
+import java.util.Arrays;
+
 import datastr.MyLinkedList;
 
 public class MainService {
@@ -32,6 +34,10 @@ public class MainService {
 			
 			System.out.println("-------------------GET-------------------");
 			System.out.println(linkedListForInt.get(3));//-200
+			
+			System.out.println("-------------------SEARCH-------------------");
+			linkedListForInt.add(100, 1);//100 45 100 -200 1000
+			System.out.println(Arrays.toString(linkedListForInt.searchElement(100)));
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
