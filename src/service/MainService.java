@@ -30,6 +30,9 @@ public class MainService {
 			linkedListForInt.remove(3);//55 izdzēsisies
 			linkedListForInt.print();//45 100 -200 1000
 			
+			System.out.println("-------------------GET-------------------");
+			System.out.println(linkedListForInt.get(3));//-200
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

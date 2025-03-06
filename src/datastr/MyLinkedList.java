@@ -145,6 +145,30 @@ public class MyLinkedList<Ttype> {
 		
 	}
 	
+	//TODO funkcijas, sameklē no konkrētās pozīcijas elementu un to atgriež
+	public Ttype get(int position) throws Exception
+	{
+		if(isEmpty()) {
+			throw new Exception("List is empty and it is not possible to return element");
+		}
+		
+		if(position < 1 || position > counter) {
+			throw new Exception("Incorrect position value");
+		}
+
+		MyNode currentNode = firstNode;
+
+		for(int i = 1; i <= position - 1; i++)
+		{
+			currentNode = currentNode.getNext();
+		}
+	
+		return (Ttype) currentNode.getElement();	
+	}
+	
+	//TODO
+	//izveidot search funkciju
+	
 	
 	
 	public void print() throws Exception{
