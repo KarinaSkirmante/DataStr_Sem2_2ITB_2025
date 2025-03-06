@@ -37,7 +37,10 @@ public class MainService {
 			
 			System.out.println("-------------------SEARCH-------------------");
 			linkedListForInt.add(100, 1);//100 45 100 -200 1000
-			System.out.println(Arrays.toString(linkedListForInt.searchElement(100)));
+			MyLinkedList<Integer> getPositionsForSearchedElement 
+			= linkedListForInt.searchElement(100);
+			getPositionsForSearchedElement.print();
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
