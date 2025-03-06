@@ -205,7 +205,15 @@ public class MyLinkedList<Ttype> {
 		System.out.println();
 	}
 	
-	
+	public void makeEmpty()
+	{
+		if(!isEmpty()) {
+			firstNode = null;
+			lastNode = null;
+			counter = 0;
+			System.gc();//izsaucam atkritumu savācēju, kas izdzēsīs mezglus no RAM
+		}
+	}
 	
 	
 }

@@ -41,6 +41,10 @@ public class MainService {
 			= linkedListForInt.searchElement(100);
 			getPositionsForSearchedElement.print();
 			
+			System.out.println("-------------------MAKE EMPTY-------------------");
+			linkedListForInt.makeEmpty();
+			linkedListForInt.add(300);
+			linkedListForInt.print();//300
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
